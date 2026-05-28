@@ -507,3 +507,235 @@ h1, h2, h3, h4, h5, h6 {
 .custom-table tr:hover td {
   background-color: var(--bg-primary);
 }
+
+/* ==========================================================================
+   Responsive Breakpoints & Mobile Styles
+   ========================================================================== */
+
+/* Tablet and below (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+  
+  .sidebar.collapsed {
+    width: 70px;
+  }
+  
+  .pos-grid {
+    grid-template-columns: 1fr 320px;
+  }
+  
+  .content-body {
+    padding: 20px;
+  }
+}
+
+/* Mobile landscape and smaller tablets (max-width: 900px) */
+@media (max-width: 900px) {
+  .pos-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: calc(100vh - 140px);
+  }
+  
+  .pos-sidebar {
+    height: auto;
+  }
+  
+  .pos-billing-area {
+    min-height: 400px;
+  }
+}
+
+/* Mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100% !important;
+    height: auto;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-right: none;
+    border-top: 1px solid var(--border-color);
+    overflow-x: auto;
+    padding: 8px 4px;
+  }
+  
+  .sidebar.collapsed {
+    width: 100% !important;
+  }
+  
+  .main-content {
+    margin-bottom: 80px; /* Space for bottom nav */
+    height: auto;
+    min-height: calc(100vh - 80px);
+  }
+  
+  .content-body {
+    padding: 16px;
+    padding-bottom: 24px;
+  }
+  
+  .pos-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .pos-totals-panel {
+    padding: 16px;
+  }
+  
+  .standard-card {
+    padding: 16px;
+  }
+  
+  /* Table responsiveness */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .custom-table {
+    min-width: 600px;
+  }
+  
+  .custom-table th, .custom-table td {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+  
+  /* Form adjustments */
+  .input-field {
+    padding: 10px 14px;
+    font-size: 16px; /* Prevent iOS zoom on focus */
+  }
+  
+  /* Button adjustments */
+  .btn {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+  
+  .touch-btn {
+    height: 52px;
+    font-size: 0.95rem;
+  }
+  
+  /* Toast notifications */
+  .toast-container {
+    bottom: 90px;
+    right: 16px;
+    left: 16px;
+  }
+  
+  .toast-alert {
+    min-width: auto;
+    width: 100%;
+    max-width: none;
+  }
+  
+  /* Modal adjustments */
+  .glass-card {
+    margin: 16px;
+    max-width: calc(100vw - 32px) !important;
+    max-height: calc(100vh - 32px) !important;
+  }
+  
+  /* Page headers */
+  h1 {
+    font-size: 1.4rem !important;
+  }
+  
+  h2 {
+    font-size: 1.15rem !important;
+  }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .content-body {
+    padding: 12px;
+  }
+  
+  .pos-grid {
+    gap: 12px;
+  }
+  
+  .pos-totals-panel {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .standard-card {
+    padding: 12px;
+    border-radius: var(--radius-sm);
+  }
+  
+  .custom-table th, .custom-table td {
+    padding: 8px 10px;
+    font-size: 0.75rem;
+  }
+  
+  .btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    gap: 6px;
+  }
+  
+  .touch-btn {
+    height: 48px;
+    font-size: 0.9rem;
+  }
+  
+  .shortcut-badge {
+    display: none; /* Hide keyboard shortcuts on mobile */
+  }
+  
+  .toast-container {
+    bottom: 85px;
+    right: 12px;
+    left: 12px;
+  }
+  
+  .toast-alert {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+  }
+  
+  h1 {
+    font-size: 1.25rem !important;
+  }
+  
+  h2 {
+    font-size: 1.05rem !important;
+  }
+  
+  /* Form grid responsiveness */
+  .input-group {
+    margin-bottom: 14px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .sidebar, .toast-container, .btn {
+    display: none !important;
+  }
+  
+  .main-content {
+    margin: 0 !important;
+  }
+  
+  .content-body {
+    padding: 0 !important;
+  }
+}
